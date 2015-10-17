@@ -24,10 +24,23 @@ echo "<h3>Home Work 2</h3><br />";
 echo("Now in Kiev: ". Carbon::now()." || ");
 echo("Now in New York: ". Carbon::now('America/New_York')." || ");
 echo("Now in London: ". Carbon::now('Europe/London')."<hr />");
-echo '<b>Faker:</b><br />';
-echo "name: ".$faker->name."<br />";
-echo "address: ".$faker->address."<br /><br />";
-echo "text: ".$faker->text;
+echo "<b>Generating fake data:</b><br />";
+echo "Enter number of data you want (between 1 and 100)";
+?>
+<form method="post" action="">
+        <label for="number">Entet number</label>
+        <input type="text" value="" name="number"/>
+        <input type="submit" value="Generate"/>
+</form><hr />
+<?php
+if(isset($_POST['number'])){
+    $n = $_POST['number'];
+    for ($i = 0; $i < $n; $i++) {
+        echo "name: " . $faker->name . "<br />";
+        echo "address: " . $faker->address . "<br /><br />";
+        echo "comments: " . $faker->text . "<br />";
+    }
+}
 # echo "Phone: ".$fake->phoneNumber;
 ?>
 </body>
