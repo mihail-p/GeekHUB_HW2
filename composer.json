@@ -1,8 +1,10 @@
 {
-    "name": "user/hw2",
+    "name": "mihail-p/hw2",
     "description": "HomeWork2",
     "require": {
-        "nesbot/carbon": "^1.20"
+	"php": ">=5.5.0",
+        "nesbot/carbon": "^1.20",
+        "fzaninotto/faker": "^1.5"
     },
     "authors": [
         {
