@@ -8,6 +8,7 @@
 require 'vendor/autoload.php';
 
 use Carbon\Carbon;
+use Respect\Validation\Validator as v;
 
 $faker = Faker\Factory::create('uk_UA');
 # $fake = Faker;
@@ -34,12 +35,17 @@ echo "Enter number of data you want (between 1 and 100)";
 </form><hr />
 <?php
 if(isset($_POST['number'])){
-    $n = $_POST['number'];
-    for ($i = 0; $i < $n; $i++) {
-        echo "name: " . $faker->name . "<br />";
-        echo "address: " . $faker->address . "<br /><br />";
-        echo "comments: " . $faker->text . "<br />";
+    $num=1;
+        if(v::numeric()->validate($_POST['number'])) {
+        $n = $_POST['number'];
+        for ($i = 0; $i < $n; $i++) {
+            echo "<b>$num</b>name: " . $faker->name . "<br />";
+            echo "address: " . $faker->address . "<br /><br />";
+            echo "comments: " . $faker->text . "<br />";
+            $num++;
+        }
     }
+    else echo"you entered not numeric data";
 }
 # echo "Phone: ".$fake->phoneNumber;
 ?>
