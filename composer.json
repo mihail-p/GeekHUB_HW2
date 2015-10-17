@@ -1,0 +1,14 @@
+{
+    "name": "user/hw2",
+    "description": "HomeWork2",
+    "require": {
+        "nesbot/carbon": "^1.20"
+    },
+    "authors": [
+        {
+            "name": "Mihail Pronyuk",
+            "email": "mishaprk@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
