@@ -5,7 +5,8 @@
 	"php": ">=5.5.0",
         "nesbot/carbon": "^1.20",
         "fzaninotto/faker": "^1.5",
-        "Respect/Validation": "^0.9.3"
+        "Respect/Validation": "^0.9.3",
+        "katzgrau/klogger": "1.*"
     },
     "authors": [
         {
