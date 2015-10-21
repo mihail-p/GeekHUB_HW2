@@ -12,10 +12,6 @@ use Respect\Validation\Validator as v;
 
 $faker = Faker\Factory::create('uk_UA');
 $logger = new Katzgrau\KLogger\Logger(__DIR__ . '/logs');
-$logger->info('Some teeeext INFO');
-$logger->error('Some ERROr index');
-$logger->debug('Databases of users');
-
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +41,7 @@ if (isset($_POST['number'])) {
     if (v::string()->notEmpty()->validate($_POST['number'])) {
         if (v::numeric()->positive()->between(0, 151)->validate($_POST['number'])) {
             $n = $_POST['number'];
+            $logger->info('Number users:' . $_POST['number']);
             for ($i = 0; $i < $n; ++$i) {
                 echo "<b>$num</b>name: " . $faker->name . '<br />';
                 echo 'address: ' . $faker->address . '<br /><br />';
@@ -53,6 +50,7 @@ if (isset($_POST['number'])) {
             }
         } else {
             echo 'you entered not correct data';
+            $logger->debug('not correct');
         }
     } else {
         echo 'you entered empty data';
